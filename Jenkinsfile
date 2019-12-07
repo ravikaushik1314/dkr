@@ -1,22 +1,28 @@
     pipeline {
         agent any
         stages {
-            stage ('Initialize') {
+            stage ('Compile') {
                 steps {
-                    echo  "Initializing the Code File"
-                }
+                  withMaven(maven: 'Maven'){
+                   sh 'mv clean compile' 
+                  }
+              }
             }
-     
-            stage ('Build') {
+            stage ('Test') {
                 steps {
-                    echo 'Hello World'
-                }
-            }
-     
+                  withMaven(maven: 'Maven'){
+                   sh 'mv test'
+                  }
+              }
+            }    
              stage ('Deploy') {
                 steps {
-                    echo 'Deployed an Artifact'
-                }
+                  withMaven(maven: 'Maven'){
+                   sh 'mv deploy'
+                  }
+              }
             }
+
+              
         }
     }
