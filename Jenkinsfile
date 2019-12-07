@@ -3,8 +3,7 @@
         stages {
             stage ('Build') {    
                 steps {
-                   maven: 'maven-3'
-                   sh "mvn clean install"
+                   sh 'mvn clean package'
                       }
                 
                 post {
