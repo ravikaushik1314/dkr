@@ -11,14 +11,14 @@
             stage ('Test') {
                 steps {
                   
-                   sh 'mv test'
+                   echo 'mv test'
                   
               }
             }    
              stage ('Deploy') {
                 steps {
                   
-                   sh 'mv deploy'
+                   echo 'mv deploy'
                   
               }
             }
