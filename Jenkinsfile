@@ -4,7 +4,7 @@
             stage ('Compile') {
                 steps {
                   
-                   mv clean compile 
+                   echo 'mv clean compile '
                   
               }
             }
