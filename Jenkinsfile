@@ -4,8 +4,8 @@
             stage ('Build') {
                 
                 steps {
-                  
-                   sh 'mvn clean install' 
+                   maven: 'Maven',
+                   sh "mvn clean install"
                       }
                 
                 post {
