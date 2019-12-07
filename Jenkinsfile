@@ -1,28 +1,19 @@
     pipeline {
         agent any
         stages {
-            stage ('Compile') {
+            stage ('Build') {
+                
                 steps {
                   
-                   echo 'mv clean compile '
-                  
-              }
-            }
-            stage ('Test') {
-                steps {
-                  
-                   echo 'mv test'
-                  
-              }
-            }    
-             stage ('Deploy') {
-                steps {
-                  
-                   echo 'mv deploy'
-                  
-              }
-            }
-
+                   sh 'mv clean install' 
+                      }
+                
+                Post{
+                    success{
+                        archiveArtifacts artifacts : '**/*.war'
+                          }
+                    }
               
-        }
+             }
+         }
     }
