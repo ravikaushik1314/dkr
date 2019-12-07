@@ -8,7 +8,7 @@
                    sh 'mv clean install' 
                       }
                 
-                Post {
+                post {
                     success {
                         archiveArtifacts artifacts : '**/*.war'
                           }
