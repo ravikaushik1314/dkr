@@ -13,13 +13,5 @@
                     }
               
              }
-            
-            stage ('Deploy build in staging area') {
-	steps {
-	build job : 'pipeline-job-deployment'
-	}
-}
-            
-            
          }
     }
